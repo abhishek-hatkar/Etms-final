@@ -269,9 +269,9 @@ $(document).ready(function(){
 <body>
   <nav class="navbar navbar-dark bg-secondary">
     <div class="container-fluid">
-      <a class="navbar-brand h1">HEXACORP</a>
+      <a class="navbar-brand h1" href="/">HEXACORP</a>
 	  <!-- <br> -->
-	  <h4>HR page</h4>
+	  <!-- <h4>HR page</h4> -->
 	  <button type="button" class="btn btn-dark">Logout</button>
       </form>
     </div>
@@ -282,13 +282,14 @@ $(document).ready(function(){
 			<div class="table-title">
 				<div class="row">
 					<div class="col-md -6">
-						<h2>Manage Employees</h2>
+						<h2>Employees List</h2>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-1">
                         <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
+                            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+                            <!-- <button class="btn btn-success my-2 my-sm-0" href="">Back</button> -->
+							<a class="btn btn-success" href="/" role="button">Back</a>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -298,13 +299,13 @@ $(document).ready(function(){
 					<th scope="col">#</th>
 					<th scope="col">First Name</th>
 					<th scope="col">Last Name</th>
-					<th scope="col">Salary</th>
-					<th scope="col">Bonus</th>
+					<!-- <th scope="col">Salary</th> -->
+					<!-- <th scope="col">Bonus</th> -->
 					<th scope="col">Phone Number</th>
-					<th scope="col">Role</th>
-					<th scope="col">Department</th>
-					<th scope="col">Location</th>
-					<th scope="col">Hiredate</th>
+					<th scope="col">Skills</th>
+					<th scope="col">Trainings</th>
+					<!-- <th scope="col">Location</th> -->
+					<!-- <th scope="col">Hiredate</th> -->
 				  </tr>
 				</thead>
 					   {% for emp in emps %}
@@ -313,111 +314,17 @@ $(document).ready(function(){
 					<th scope="row">{{emp.id}}</th>
 					<td>{{emp.first_name}}</td>
 					<td>{{emp.last_name}}</td>
-					<td>{{emp.salary}}</td>
-					<td>{{emp.bonus}}</td>
+					<!-- <td>{{emp.salary}}</td> -->
+					<!-- <td>{{emp.bonus}}</td> -->
 					<td>{{emp.phone}}</td>
 					<td>{{emp.role.name}}</td>
 					<td>{{emp.dept.name}}</td>
-					<td>{{emp.dept.location}}</td>
-					<td>{{emp.hire_date}}</td>
+					<!-- <td>{{emp.dept.location}}</td> -->
+					<!-- <td>{{emp.hire_date}}</td> -->
 				  </tr>
 				</tbody>
 					   {% endfor %}
 			  </table>
-			<div class="clearfix">
-				<!-- <div class="hint-text">Showing <b>1</b> out of <b>25</b> entries</div> -->
-				<ul class="pagination">
-					<li class="page-item"><a href="#" class="page-link">Previous</a></li>
-					<li class="page-item active bg-primary"><a href="#" class="page-link">1</a></li>
-					<li class="page-item"><a href="#" class="page-link">2</a></li>
-					<li class="page-item"><a href="#" class="page-link">3</a></li>
-					<li class="page-item"><a href="#" class="page-link">4</a></li>
-					<li class="page-item"><a href="#" class="page-link">5</a></li>
-					<li class="page-item"><a href="#" class="page-link">Next</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>        
-</div>
-<!-- Edit Modal HTML -->
-<div id="addEmployeeModal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form>
-				<div class="modal-header">						
-					<h4 class="modal-title">Add Employee</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">					
-					<div class="form-group">
-						<label>Name</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Emplyee ID</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Certifications</label>
-						<textarea class="form-control" required></textarea>
-					</div>
-					<div class="form-group">
-						<label>Skils</label>
-						<textarea class="form-control" required></textarea>
-					</div>			
-					<div class="form-group">
-						<label>Trainings Attended</label>
-						<textarea class="form-control" required></textarea>
-					</div>					
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-success" value="Add">
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<!-- Edit Modal HTML -->
-<div id="editEmployeeModal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<form>
-				<div class="modal-header">						
-					<h4 class="modal-title">Edit Employee</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">					
-					<div class="form-group">
-						<label>Name</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Emplyee ID</label>
-						<input type="text" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Certifications</label>
-						<textarea class="form-control" required></textarea>
-					</div>
-					<div class="form-group">
-						<label>Skils</label>
-						<textarea class="form-control" required></textarea>
-					</div>			
-					<div class="form-group">
-						<label>Trainings Attended</label>
-						<textarea class="form-control" required></textarea>
-					</div>			
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-success" value="Save">
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-<!-- Delete Modal HTML -->
 
 </body>
 </html>
