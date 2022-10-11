@@ -3,13 +3,18 @@ from .models import Employee, Role, Department
 from datetime import datetime
 from django.db.models import Q
 from django.http import HttpResponse
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # def home(request):
-#     return (request, 'index.html')
+#     return (request, 'ho.html')
 
 # # Create your views here.
-def index(request):
+def home(request):
     return render(request, 'home.html')
+
+def index(request):
+    return render(request, 'index.html')
 
 # def signup(request):
 #     return render(request,"signup.html")
